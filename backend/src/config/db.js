@@ -41,6 +41,9 @@ async function connectDB(retries = 5, delay = 3000) {
 
       pool = new Pool({
         connectionString: DB_URL,
+        ssl: {
+          rejectUnauthorized: false,
+        },
       });
 
       await pool.query("SELECT 1");
