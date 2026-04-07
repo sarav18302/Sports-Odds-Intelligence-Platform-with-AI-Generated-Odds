@@ -1,0 +1,18 @@
+CREATE TABLE IF NOT EXISTS matches (
+  id SERIAL PRIMARY KEY,
+  sport VARCHAR(50),
+  league VARCHAR(100),
+  team_a VARCHAR(100),
+  team_b VARCHAR(100),
+  team_a_rating FLOAT,
+  team_b_rating FLOAT,
+  start_time TIMESTAMP,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS users (
+  id SERIAL PRIMARY KEY,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  password TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
